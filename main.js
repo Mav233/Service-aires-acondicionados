@@ -28,3 +28,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+
+document.querySelector('.cold-button').addEventListener('click', () => {
+    document.body.classList.add('cold-theme');
+    document.body.classList.remove('warm-theme');
+});
+
+document.querySelector('.warm-button').addEventListener('click', () => {
+    document.body.classList.add('warm-theme');
+    document.body.classList.remove('cold-theme');
+});
+
+
+
+
+

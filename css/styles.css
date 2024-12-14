@@ -22,11 +22,30 @@ body {
 }
 
 .hero p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    margin: 0 auto;
-    max-width: 700px;
+    background: linear-gradient(145deg, #083f8d, #083f8d, #070119); /* Fondo azul oscuro semitransparente */
+    color: #e4e4e4; /* Texto claro para contraste */
+    padding: 15px 25px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    display: inline-block; /* Fondo ajustado al tamaño del texto */
+    box-shadow: 0 8px 50px #068fff80; /* Sombra para realzar el fondo */
+    backdrop-filter: blur(5px); /* Efecto de difuminado */
+    -webkit-backdrop-filter: blur(5px); /* Soporte para Safari */
+    transition: transform 0.10s ease, background-color 0.3s ease; /* Transiciones suaves */
+    background-size: 300% 300%; /* Movimiento del gradiente en la animación */
+    opacity: 1;
+    animation: borderFlicker 3s linear infinite; /* Animación constante */
+    font-weight: bold; /* Texto más grueso */
+    font-size: 1.4rem; /* Tamaño de texto más llamativo */
 }
+
+/* Efecto al pasar el cursor */
+.hero p:hover {
+    background: rgba(20, 50, 80, 0.9); /* Fondo ligeramente más brillante */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+    color: #58a6ff; /* Azul brillante para resaltar el texto */
+}
+
+
 
 /* Botón principal */
 .btn-primary {
@@ -102,15 +121,37 @@ body {
     padding: 0;
 }
 
-.cta ul li {
-    font-size: 1.1rem;
-    margin-bottom: 10px;
-    color: #8b949e;
+.cta ul {
+    padding: 20px;
+    margin: 0;
+    background-color: #0d1117; /* Fondo sólido oscuro */
+    border-radius: 10px; /* Bordes redondeados para el bloque */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidad */
+    text-align: left; /* Alineación de texto */
 }
 
-.cta button {
-    margin-top: 20px;
+.cta ul li {
+    font-size: 1.2rem; /* Tamaño del texto ligeramente más grande */
+    margin-bottom: 15px; /* Espacio entre los elementos */
+    color: #e4e4e4; /* Texto claro */
+    padding: 10px 15px; /* Espaciado interno */
+    list-style: none; /* Elimina los puntos de lista */
+    border-left: 4px solid #00aaff; /* Línea lateral para resaltar */
+    background-color: #161b22; /* Fondo uniforme */
+    font-weight: bold; /* Texto más grueso */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Sombra ligera en el texto */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Efectos suaves */
 }
+
+/* Efecto hover en los elementos de la lista */
+.cta ul li:hover {
+    transform: translateX(5px); /* Mueve el texto ligeramente al pasar el cursor */
+    box-shadow: 0 4px 10px rgba(0, 170, 255, 0.6); /* Sombra más vibrante */
+    border-left: 6px solid #00ccff; /* Resalta la línea lateral */
+    background-color: #1a2330; /* Fondo ligeramente más claro */
+}
+
+
 
 /* Footer */
 .footer {
@@ -417,6 +458,181 @@ h1:hover, h2:hover, h4:hover, h5:hover, h6:hover {
 
 
 
+
+
+
+
+/* Navbar General Styles */
+.custom-navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(13, 17, 23, 0.6);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    padding: 15px 20px; /* Incrementa un poco el padding para acomodar el logo */
+    display: flex;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    transition: background 0.3s ease;
+}
+
+/* Contenido de la navbar */
+.navbar-content {
+    display: flex;
+    align-items: center; /* Centra verticalmente el contenido */
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* Logo */
+.navbar-logo {
+    width: 50px; /* Tamaño más grande */
+    height: auto;
+    margin-right: 15px; /* Espaciado entre logo y texto */
+}
+
+/* Texto al lado del logo */
+.navbar-text {
+    font-size: 1.8rem; /* Texto más prominente */
+    color: #f0f6fc;
+    font-weight: 500;
+}
+
+/* Espaciado para evitar superposición con el contenido */
+.main-title {
+    margin-top: 80px; /* Ajusta según el alto de la navbar */
+    font-size: 2.5rem;
+    text-align: center;
+    color: #f0f6fc;
+}
+/* Navbar fija */
+.custom-navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 70px; /* Define la altura de la navbar */
+    background: rgba(13, 17, 23, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 20px;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+/* Ajusta el relleno del contenido principal */
+body {
+    margin: 0; /* Elimina cualquier margen predeterminado */
+    padding-top: 70px; /* Igual a la altura de la navbar */
+}
+
+/* Otras reglas de estilo */
+.main-title {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #f0f6fc;
+    margin-top: 20px; /* Ajusta el espaciado si es necesario */
+}
+
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .navbar-text {
+        font-size: 1.2rem;
+    }
+
+    .navbar-logo {
+        width: 40px; /* Logo más pequeño en pantallas móviles */
+    }
+
+    .main-title {
+        margin-top: 100px; /* Más espacio en dispositivos móviles */
+    }
+}
+.hidden {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* General */
+#mapa-contacto {
+    margin: 40px 0;
+    padding: 20px;
+    background-color: rgba(0, 153, 255, 0.1); /* Fondo azul tenue */
+    border-radius: 10px;
+    text-align: center;
+}
+
+.map-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.map-title {
+    font-size: 1.5rem;
+    color: #f0f6fc;
+    margin-bottom: 10px;
+}
+
+.map-description {
+    font-size: 1.2rem; /* Tamaño más grande */
+    color: #f0f6fc;
+    margin-bottom: 20px;
+}
+
+/* Contenedor del mapa para mantener la relación de aspecto */
+.map-frame-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+    border: 4px solid rgba(0, 153, 255, 0.8); /* Contorno azul principal */
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 153, 255, 0.6), 
+                0 0 30px rgba(0, 153, 255, 0.4); /* Efecto de neón tenue */
+    overflow: hidden; /* Para evitar bordes extra si hay contenido que se salga */
+}
+
+/* Mapa en sí */
+.map-frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    #mapa-contacto {
+        padding: 15px;
+    }
+    .map-title {
+        font-size: 1.25rem;
+    }
+    .map-description {
+        font-size: 1rem;
+    }
+    .map-frame-container {
+        padding-bottom: 75%; /* Relación de aspecto 4:3 para pantallas pequeñas */
+        box-shadow: 0 0 10px rgba(0, 153, 255, 0.5), 
+                    0 0 20px rgba(0, 153, 255, 0.3); /* Ajuste de neón en pantallas pequeñas */
+    }
+}
 
 
 
