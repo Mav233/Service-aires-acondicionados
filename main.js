@@ -1,7 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
     const serviceItems = document.querySelectorAll(".service-item");
-
-    // Función para verificar si un elemento es visible en el viewport
     const isInViewport = (element) => {
         const rect = element.getBoundingClientRect();
         return (
@@ -9,7 +7,6 @@ document.addEventListener("DOMContentLoaded", function () {
         );
     };
 
-    // Función que aplica la clase 'active' cuando las tarjetas están visibles
     const onScroll = () => {
         serviceItems.forEach(item => {
             if (isInViewport(item)) {
@@ -21,13 +18,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // Escucha del evento scroll
     window.addEventListener("scroll", onScroll);
 
-    // Ejecuta la función al cargar la página para elementos visibles inmediatamente
     onScroll();
 });
-
-
-
-
 
 document.querySelector('.cold-button').addEventListener('click', () => {
     document.body.classList.add('cold-theme');
@@ -39,7 +31,23 @@ document.querySelector('.warm-button').addEventListener('click', () => {
     document.body.classList.remove('cold-theme');
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+    const serviceItems = document.querySelectorAll(".service-item");
 
-
-
-
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("active");
+                } else {
+                    entry.target.classList.remove();
+                }
+            });
+        },
+        {
+            root: null,
+            threshold: 0.1,
+        }
+    );
+    serviceItems.forEach((item) => observer.observe(item));
+});
