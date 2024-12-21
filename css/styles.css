@@ -19,6 +19,8 @@ body {
     margin-bottom: 20px;
 }
 
+
+
 .hero p {
     background: linear-gradient(145deg, #083f8d, #083f8d, #070119);
     color: #e4e4e4;
@@ -319,6 +321,23 @@ h1:hover, h2:hover, h4:hover, h5:hover, h6:hover {
     color: #58a6ff;
 }
 
+.lead {
+    background: linear-gradient(145deg, #083f8d, #083f8d, #1742b0);
+    color: #ffffff;
+    padding: 25px 25px;
+    border-radius: 10px;
+    display: inline-block;
+    box-shadow: 0 8px 50px #068fff80;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    transition: transform 0.10s ease, background-color 0.3s ease;
+    background-size: 300% 300%;
+    opacity: 1;
+    animation: borderFlicker 3s linear infinite;
+    font-weight:lighter;
+    font-size: 1.2rem;
+}
+
 .cta-whatsapp {
     position: fixed;
     bottom: 80px;
@@ -395,14 +414,14 @@ h1:hover, h2:hover, h4:hover, h5:hover, h6:hover {
     position: fixed;
     top: 0;
     width: 100%;
+    height: 70px;
     background: rgba(13, 17, 23, 0.6);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    padding: 15px 20px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    padding: 15px 20px;
+    z-index: 1000;
     backdrop-filter: blur(10px);
-    transition: background 0.3s ease;
 }
 
 .navbar-content {
@@ -410,6 +429,7 @@ h1:hover, h2:hover, h4:hover, h5:hover, h6:hover {
     align-items: center;
     max-width: 1200px;
     width: 100%;
+    justify-content: space-between;
 }
 
 .navbar-logo {
@@ -424,26 +444,37 @@ h1:hover, h2:hover, h4:hover, h5:hover, h6:hover {
     font-weight: 500;
 }
 
-.main-title {
-    margin-top: 80px;
-    font-size: 2.5rem;
-    text-align: center;
-    color: #f0f6fc;
+.navbar-icon-link {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
 }
 
-.custom-navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 70px;
-    background: rgba(13, 17, 23, 0.6);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 15px 20px;
-    z-index: 1000;
-    backdrop-filter: blur(10px);
+.navbar-icon {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #007bff;
+    border-radius: 60%;
+    padding: 5px;
+    background-color: #033eff1a;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    cursor: pointer;
 }
+
+.navbar-icon:hover {
+    transform: scale(1.2);
+    opacity: 0.9;
+    border-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .navbar-icon {
+        width: 35px;
+        height: 35px;
+        padding: 3px;
+    }
+}
+
 
 body {
     margin: 0;
@@ -686,36 +717,30 @@ body {
 }
 }
 
-
-
-
-
-
-
 .footer-developer {
     display: flex;
     align-items: center;
-    justify-content: center; /* Centrado en desktop */
+    justify-content: center;
     margin-top: 20px;
-    margin-bottom: 60px; /* Espacio inferior para evitar colisión con otros elementos */
+    margin-bottom: 60px;
 }
 
 .developer-button {
     display: flex;
     align-items: center;
-    background-color: rgba(2, 31, 51, 0.8); /* Fondo azul brillante */
+    background-color: rgba(2, 31, 51, 0.8);
     padding: 10px 20px;
-    border-radius: 12px; /* Bordes redondeados */
+    border-radius: 12px;
     text-decoration: none;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 153, 255, 0.4); /* Sombra tenue */
+    box-shadow: 0 4px 8px rgba(0, 153, 255, 0.4);
     cursor: pointer;
 }
 
 .developer-button:hover {
-    background-color: #023157; /* Azul más oscuro al pasar el cursor */
-    transform: translateY(-3px); /* Elevación */
-    box-shadow: 0 6px 12px rgba(0, 153, 255, 0.6); /* Sombra más pronunciada */
+    background-color: #023157;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 153, 255, 0.6);
 }
 
 .mav-logo {
@@ -724,53 +749,53 @@ body {
 }
 
 .mav-text {
-    color: #046ad1; /* Blanco tenue */
+    color: #046ad1;
     font-weight: bold;
     font-size: 1rem;
     transition: color 0.3s ease;
 }
 
 .mav-text:hover {
-    color: #a6f6f1; /* Cian brillante */
+    color: #a6f6f1;
 }
 
-/* Responsividad */
+
 @media (max-width: 768px) {
     .footer-developer {
-        margin-bottom: 80px; /* Aumenta el espacio inferior en tablets */
+        margin-bottom: 80px;
     }
 
     .developer-button {
-        padding: 8px 16px; /* Reduce tamaño del botón */
+        padding: 8px 16px;
         border-radius: 8px;
     }
 
     .mav-logo {
-        max-width: 25px; /* Tamaño reducido del logo */
+        max-width: 25px;
     }
 
     .mav-text {
-        font-size: 0.9rem; /* Texto más pequeño */
+        font-size: 0.9rem;
     }
 }
 
 @media (max-width: 480px) {
     .footer-developer {
-        margin-bottom: 100px; /* Aumenta aún más el espacio inferior */
+        margin-bottom: 100px;
     }
 
     .developer-button {
-        flex-direction: row; /* Disposición horizontal */
-        justify-content: flex-start; /* Alinea los elementos al inicio */
-        padding: 8px 12px; /* Tamaño reducido del botón */
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: 8px 12px;
     }
 
     .mav-logo {
-        max-width: 20px; /* Tamaño reducido del logo */
-        margin-right: 8px; /* Espaciado reducido entre logo y texto */
+        max-width: 20px;
+        margin-right: 8px;
     }
 
     .mav-text {
-        font-size: 0.8rem; /* Texto más reducido */
+        font-size: 0.8rem;
     }
 }

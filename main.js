@@ -1,25 +1,37 @@
 document.addEventListener("DOMContentLoaded", function () {
     const serviceItems = document.querySelectorAll(".service-item");
+
     const isInViewport = (element) => {
         const rect = element.getBoundingClientRect();
-        return (
-            rect.top < window.innerHeight && rect.bottom > 0
-        );
+        const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+        return rect.top < viewportHeight && rect.bottom > 0;
     };
 
     const onScroll = () => {
         serviceItems.forEach(item => {
-            if (isInViewport(item)) {
+            if (isInViewport(item) && !item.classList.contains("active")) {
                 item.classList.add("active");
             }
         });
     };
 
-    // Escucha del evento scroll
-    window.addEventListener("scroll", onScroll);
+    // Optimizar scroll con throttle
+    let timeout;
+    const throttleScroll = () => {
+        if (!timeout) {
+            timeout = setTimeout(() => {
+                onScroll();
+                timeout = null;
+            }, 100);
+        }
+    };
 
+    window.addEventListener("scroll", throttleScroll);
+
+    // Verificar visibilidad inicial
     onScroll();
 });
+
 
 document.querySelector('.cold-button').addEventListener('click', () => {
     document.body.classList.add('cold-theme');
