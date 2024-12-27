@@ -1,5 +1,5 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif,'Segoe UI', Tahoma, Verdana, sans-serif;
     color: #e4e4e4;
     background-color: #0d1117;
     margin: 0;
@@ -18,8 +18,6 @@ body {
     font-weight: 700;
     margin-bottom: 20px;
 }
-
-
 
 .hero p {
     background: linear-gradient(145deg, #083f8d, #083f8d, #070119);
@@ -43,6 +41,46 @@ body {
     transform: scale(1.05);
     color: #58a6ff;
 }
+
+.lead {
+    background: linear-gradient(145deg, #0966b8, #000d16); /* Azul claro */
+    color: #ffffff;
+    padding: 25px 25px;
+    border-radius: 10px;
+    display: inline-block;
+    box-shadow: 0 8px 50px rgba(6, 143, 255, 0.5);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    transition: transform 0.2s ease, background 0.5s ease, text-shadow 0.3s ease;
+    background-size: 300% 300%;
+    animation: gradientShift 6s ease infinite;
+    font-weight: lighter;
+    font-size: 1.2rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Hover actualizado */
+.lead:hover {
+    transform: translateY(-10px);
+    background: linear-gradient(145deg, #0966b8, #000d16); /* Azul aún más claro */
+    text-shadow: 0 0 10px #1d1d1e, 0 0 20px #013e58, 0 0 30px #015d85;
+}
+
+/* Animación del gradiente */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
 
 .btn-primary {
     background-color: #238636;
@@ -319,23 +357,6 @@ h1:hover, h2:hover, h4:hover, h5:hover, h6:hover {
     background: rgba(20, 50, 80, 0.9);
     transform: scale(1.05);
     color: #58a6ff;
-}
-
-.lead {
-    background: linear-gradient(145deg, #083f8d, #083f8d, #1742b0);
-    color: #ffffff;
-    padding: 25px 25px;
-    border-radius: 10px;
-    display: inline-block;
-    box-shadow: 0 8px 50px #068fff80;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    transition: transform 0.10s ease, background-color 0.3s ease;
-    background-size: 300% 300%;
-    opacity: 1;
-    animation: borderFlicker 3s linear infinite;
-    font-weight:lighter;
-    font-size: 1.2rem;
 }
 
 .cta-whatsapp {
