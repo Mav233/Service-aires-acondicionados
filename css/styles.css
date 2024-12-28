@@ -43,7 +43,7 @@ body {
 }
 
 .lead {
-    background: linear-gradient(145deg, #0966b8, #000d16); /* Azul claro */
+    background: linear-gradient(145deg, #0966b8, #000d16);
     color: #ffffff;
     padding: 25px 25px;
     border-radius: 10px;
@@ -55,19 +55,17 @@ body {
     background-size: 300% 300%;
     animation: gradientShift 6s ease infinite;
     font-weight: lighter;
-    font-size: 3.3rem; /* Tamaño por defecto */
+    font-size: 3.3rem;
     position: relative;
     z-index: 1;
 }
 
-/* Hover actualizado */
 .lead:hover {
     transform: translateY(-10px);
-    background: linear-gradient(145deg, #0966b8, #000d16); /* Azul aún más claro */
+    background: linear-gradient(145deg, #0966b8, #000d16);
     text-shadow: 0 0 10px #1d1d1e, 0 0 20px #013e58, 0 0 30px #015d85;
 }
 
-/* Animación del gradiente */
 @keyframes gradientShift {
     0% {
         background-position: 0% 50%;
@@ -80,22 +78,17 @@ body {
     }
 }
 
-/* Estilos responsivos */
 @media (max-width: 768px) {
     .lead {
-        font-size: 3.3rem; /* Tamaño más pequeño para pantallas medianas */
+        font-size: 3.3rem;
     }
 }
 
 @media (max-width: 480px) {
     .lead {
-        font-size: 3.3rem; /* Tamaño aún más pequeño para pantallas pequeñas */
+        font-size: 3.3rem;
     }
 }
-
-
-
-
 
 .btn-primary {
     background-color: #238636;
