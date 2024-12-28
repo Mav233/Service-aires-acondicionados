@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     };
 
-    // Optimizar scroll con throttle
     let timeout;
     const throttleScroll = () => {
         if (!timeout) {
@@ -27,11 +26,8 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     window.addEventListener("scroll", throttleScroll);
-
-    // Verificar visibilidad inicial
     onScroll();
 });
-
 
 document.querySelector('.cold-button').addEventListener('click', () => {
     document.body.classList.add('cold-theme');
