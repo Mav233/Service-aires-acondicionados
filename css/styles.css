@@ -55,7 +55,7 @@ body {
     background-size: 300% 300%;
     animation: gradientShift 6s ease infinite;
     font-weight: lighter;
-    font-size: 1.2rem;
+    font-size: 3.3rem; /* Tamaño por defecto */
     position: relative;
     z-index: 1;
 }
@@ -79,6 +79,21 @@ body {
         background-position: 0% 50%;
     }
 }
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .lead {
+        font-size: 3.3rem; /* Tamaño más pequeño para pantallas medianas */
+    }
+}
+
+@media (max-width: 480px) {
+    .lead {
+        font-size: 3.3rem; /* Tamaño aún más pequeño para pantallas pequeñas */
+    }
+}
+
+
 
 
 
